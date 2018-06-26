@@ -21,20 +21,21 @@ public class samplePageTest {
 
     @AfterTest
     public void testDown() {
-//        driver.quit();
+        driver.quit();
     }
 
     @Test
     public void addComments() {
 
+        final String text = "There is comment with generated ID: " + Utils.getRandomString(15);
         final String errorPageMessageWrongEmail = "ERROR: please enter a valid email address.";
         final String errorPageTitleWrongEmail = "Comment Submission Failure";
 
         new HomePage(driver)
                 .openSamplePage()
-                .sendNewCommentWithWrongEmail()
+                .sendNewCommentWithWrongEmail(text)
                 .checkErrorMessage(errorPageTitleWrongEmail, errorPageMessageWrongEmail)
-                .sendNewComment()
-                .checkPostedComment();
+                .sendNewComment(text)
+                .checkPostedComment(text);
     }
 }
