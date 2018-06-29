@@ -1,4 +1,4 @@
-# adidas-selenium
+# adidas-selenium ///
 
 Project created as test task for ADIDAS.
 Using selenium for actions in different browsers with demo site.
